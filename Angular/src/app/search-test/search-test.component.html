@@ -1,0 +1,79 @@
+<div class="containerS">
+<div class="login-form">
+<div class="main-div">
+    <div class="panel">
+   <h2>Search Resumes</h2>
+   </div>
+    <form id="Search">
+        <div class="form-group">
+                <input #nameSearch type="text" class="form-control" 
+                placeholder="Name" id="nameSearch" (keyup.enter)="onSearch()"/>
+        </div>
+
+        <div class="form-group">
+            <input #emailSearch type="text" class="form-control" 
+							placeholder="Email" id="emailSearch" (keyup.enter)="onSearch()"/>
+        </div>
+
+        <div class="form-group">
+            <input #emailSearch type="text" class="form-control" 
+                        placeholder="Skills, Separated By Commas" id="skillSearch" (keyup.enter)="onSearch()"/>
+        </div>
+
+        <div class="form-group">
+            <input #emailSearch type="text" class="form-control" 
+                        placeholder="GPA" id="gpaSearch" (keyup.enter)="onSearch()"/>
+        </div>
+
+        <button type="submit" class="btn btn-primary pull-left" (click)="onSearch()">Search</button>
+        <button type="submit" class="btn btn-primary pull-left" (click)="onClear()">Clear</button>
+            
+    </form>
+    <div class="btn-group" role="group">
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle"
+							type="button" id="dropdownMenuButton" 
+							data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">
+							Sort by
+						</button>
+						<div class="dropdown-menu" 
+							aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" (click)="onSort('Name')">
+								Name
+							</a>
+							<a class="dropdown-item" (click)="onSort('Email')">
+								Email
+							</a>
+							<a class="dropdown-item" (click)="onSort('GPA')">
+								GPA
+							</a>
+							<a class="dropdown-item" 
+								(click)="onSort('Experience')">
+								Total Experience
+							</a>
+							<a class="dropdown-item" (click)="onSort('Date')">
+								Date Submitted
+							</a>
+						</div>
+						<p>{{sortType}}</p>
+					</div>
+					<div class="btn btn-default" 
+						(click)="onSortChange()">
+						{{ascendingString}}
+					</div>
+				</div>
+				<div>
+					<div *ngIf="data" class="list-group">
+						<a style="cursor: pointer; color: white;" 
+							class="list-group-item bg-success" 
+							*ngFor="let resume of data"
+							(click)="displayData(resume)">
+							{{resume.name}}
+						</a>
+					</div>
+				</div>
+    </div>
+</div>
+</div>
+

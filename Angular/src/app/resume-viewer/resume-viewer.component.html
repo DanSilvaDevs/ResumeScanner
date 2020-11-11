@@ -1,0 +1,150 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 col-xl-6 col-sm-6 col-md-6">
+			<!-- <img *ngIf="resume" [src]="resumeImage" 
+				width="99.6%" height="450px" alt=""> -->
+		</div>
+		<div class="col-lg-6 col-xl-6 col-sm-6 col-md-6">
+			<div class="form">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="form-group">
+								<label for="name">Name:</label>
+								<input type="text" class="form-control" 
+								placeholder="Enter Name" id="name">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="form-group">
+								<label for="phone">Phone:</label>
+								<input type="text" class="form-control" 
+								placeholder="Enter Phone" id="phone">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="form-group">
+							<label for="email">Email:</label>
+							<input type="text" class="form-control" 
+							placeholder="Enter Email" id="email">
+						</div>
+					</div>
+				</div>
+				
+				<hr>
+
+				<h1>Keywords</h1>
+				
+				<div class="row">
+					<div *ngFor="let keyword of resume.keywords; let i = index"
+						class="col-lg-6">
+						<div class="form-group">
+							<label for="{{'keywords' + i}}">Keyword:</label>
+							<input type="text" class="form-control" 
+								placeholder="Enter Keyword"
+								id="{{'keywords' + i}}">
+						</div>
+					</div>
+				</div>
+
+				<hr>
+
+				<h1>Education</h1>
+.
+				<div class="row">
+					<div *ngFor="let edu of resume.education; let i = index"
+						class="col-lg-6">
+						<span class="glyphicon glyphicon-trash"
+							aria-hidden="true"></span>
+						<div class="form-group">
+							<label for="{{'university' + i}}">
+								University:
+							</label>
+							<input type="text" class="form-control" 
+								placeholder="Enter University" 
+								id="{{'university' + i}}">
+						</div>
+
+						<div class="form-group">
+							<label for="{{'degree' + i}}">
+								Degree:
+							</label>
+							<input type="text" class="form-control" 
+								placeholder="Enter Degree" 
+								id="{{'degree' + i}}">
+						</div>
+
+						<div class="form-group">
+							<label for="{{'gpa' + i}}">
+								GPA:
+							</label>
+							<input type="text" class="form-control" 
+								placeholder="Enter GPA" 
+								id="{{'gpa' + i}}">
+						</div>
+
+						<div class="form-group">
+							<label for="{{'year' + i}}">
+								Year Received:
+							</label>
+							<input type="text" class="form-control" 
+								placeholder="Enter Year" 
+								id="{{'year' + i}}">
+						</div>
+					</div>
+				</div>
+
+				<hr>
+
+				<h1>Experience</h1>
+
+				<div class="row">
+					<div *ngFor="let exp of resume.experience; let i = index"
+						class="col-lg-6">
+						<div class="form-group">
+							<label for="{{'company' + i}}">
+								Company:
+							</label>
+							<input type="text" class="form-control" 
+								placeholder="Enter Company" 
+								id="{{'company' + i}}">
+						</div>
+
+						<div class="form-group">
+							<label for="{{'position' + i}}">
+								Position:
+							</label>
+							<input type="text" class="form-control" 
+								placeholder="Enter Position" 
+								id="{{'position' + i}}">
+						</div>
+
+						<div class="form-group">
+							<label for="{{'totalExperience' + i}}">
+								Months Employed:
+							</label>
+							<input type="text" class="form-control" 
+								placeholder="Enter Months Employed" 
+								id="{{'totalExperience' + i}}">
+						</div>
+					</div>
+				</div>
+
+				<br>
+
+				<button class="btn btn-success" (click)="onConfirm()"
+					data-toggle="modal" data-target="#resumeModal">
+					Confirm
+				</button>
+				<button class="btn btn-danger" (click)="onCancel()"
+					data-toggle="modal" data-target="#resumeModal">Cancel
+				</button>
+			</div>	
+		</div>
+	</div>
+</div>
